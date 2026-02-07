@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic Style Hub - Pinterest Fashion & Outfit Inspiration</title>
+    <meta name="description" content="Discover aesthetic dress styles, Pinterest-worthy outfits, and curated fashion inspiration for every occasion.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background: #fdfbf7;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ffeef8 0%, #fff5f0 100%);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 3px solid #f0d9e7;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #8b5a7d;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #a67c94;
+            font-style: italic;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #6b4e5e;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #d4789a;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, #fff9f5, #fdfbf7);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            color: #8b5a7d;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #6b6b6b;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #d4789a;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 120, 154, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #c06684;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 120, 154, 0.4);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        /* Grid Layout */
+        .outfit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .outfit-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .outfit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .outfit-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, #f5e6f0, #e8d5e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #d4789a;
+        }
+
+        .outfit-content {
+            padding: 1.5rem;
+        }
+
+        .outfit-content h3 {
+            color: #8b5a7d;
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        .outfit-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .shop-button {
+            display: inline-block;
+            background: #f0d9e7;
+            color: #8b5a7d;
+            padding: 0.7rem 1.5rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .shop-button:hover {
+            background: #d4789a;
+            color: white;
+        }
+
+        /* Categories Section */
+        .categories {
+            background: white;
+            padding: 3rem 1rem;
+            margin: 3rem 0;
+        }
+
+        .category-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .tag {
+            background: #ffeef8;
+            color: #8b5a7d;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .tag:hover {
+            background: #d4789a;
+            color: white;
+            border-color: #8b5a7d;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #fff5f0 0%, #ffeef8 100%);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .about h2 {
+            color: #8b5a7d;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c2c2c;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        footer a {
+            color: #d4789a;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: #8b5a7d;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .section-header p {
+            color: #888;
+            font-size: 1.05rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .outfit-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Pinterest Save Button Styling */
+        .pinterest-save {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>✨ Aesthetic Style Hub</h1>
+        <p class="tagline">Your Pinterest-Inspired Fashion Destination</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#outfits">Outfits</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <h2>Discover Your Perfect Aesthetic</h2>
+        <p>Curated dress styles and outfit inspiration for every vibe - from cottagecore to dark academia, coastal grandmother to coquette. Find your signature look and shop the aesthetic you love.</p>
+        <a href="#outfits" class="cta-button">Explore Styles</a>
+    </section>
+
+    <div class="container" id="outfits">
+        <div class="section-header">
+            <h2>Featured Outfit Ideas</h2>
+            <p>Pinterest-worthy looks you'll love</p>
+        </div>
+
+        <div class="outfit-grid">
+            <div class="outfit-card">
+                <div class="outfit-image">👗</div>
+                <div class="outfit-content">
+                    <h3>Cottagecore Dream</h3>
+                    <p>Flowy floral midi dresses perfect for garden parties and romantic picnics. Embrace soft pastels, puff sleeves, and vintage-inspired details.</p>
+                    <a href="#" class="shop-button">Shop This Look</a>
+                </div>
+            </div>
+
+            <div class="outfit-card">
+                <div class="outfit-image">🌙</div>
+                <div class="outfit-content">
+                    <h3>Dark Academia</h3>
+                    <p>Structured blazers, plaid skirts, and sophisticated neutral tones. Channel your inner scholarly elegance with timeless pieces.</p>
+                    <a href="#" class="shop-button">Shop This Look</a>
+                </div>
+            </div>
+
+            <div class="outfit-card">
+                <div class="outfit-image">🎀</div>
+                <div class="outfit-content">
+                    <h3>Coquette Chic</h3>
+                    <p>Ribbon details, ballet flats, and feminine silhouettes in soft pinks and whites. Delicate, romantic, and effortlessly charming.</p>
+                    <a href="#" class="shop-button">Shop This Look</a>
+                </div>
+            </div>
+
+            <div class="outfit-card">
+                <div class="outfit-image">🌊</div>
+                <div class="outfit-content">
+                    <h3>Coastal Grandmother</h3>
+                    <p>Breezy linen dresses, neutral palettes, and relaxed elegance. Effortless sophistication meets beach house vibes.</p>
+                    <a href="#" class="shop-button">Shop This Look</a>
+                </div>
+            </div>
+
+            <div class="outfit-card">
+                <div class="outfit-image">✨</div>
+                <div class="outfit-content">
+                    <h3>Fairy Grunge</h3>
+                    <p>Mix ethereal mesh layers with edgy boots and chains. Whimsical meets rebellious in this unique aesthetic blend.</p>
+                    <a href="#" class="shop-button">Shop This Look</a>
+                </div>
+            </div>
+
+            <div class="outfit-card">
+                <div class="outfit-image">🌸</div>
+                <div class="outfit-content">
+                    <h3>Soft Girl Summer</h3>
+                    <p>Pastel sundresses, heart accessories, and playful prints. Sweet, colorful, and perfect for sunny days.</p>
+                    <a href="#" class="shop-button">Shop This Look</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="categories" id="categories">
+        <div class="section-header">
+            <h2>Shop By Aesthetic</h2>
+            <p>Find your vibe and explore curated collections</p>
+        </div>
+        <div class="category-tags">
+            <a href="#" class="tag">Cottagecore</a>
+            <a href="#" class="tag">Dark Academia</a>
+            <a href="#" class="tag">Coquette</a>
+            <a href="#" class="tag">Coastal Grandmother</a>
+            <a href="#" class="tag">Y2K</a>
+            <a href="#" class="tag">Fairy Grunge</a>
+            <a href="#" class="tag">Soft Girl</a>
+            <a href="#" class="tag">Clean Girl</a>
+            <a href="#" class="tag">Old Money</a>
+            <a href="#" class="tag">Boho Chic</a>
+            <a href="#" class="tag">Minimalist</a>
+            <a href="#" class="tag">Vintage</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About Aesthetic Style Hub</h2>
+        <p>Welcome to your new favorite fashion destination! We curate the best aesthetic dress styles and outfit inspiration from across Pinterest and beyond. Whether you're building your dream wardrobe or just looking for your next favorite dress, we've got you covered with handpicked recommendations and honest styling advice. Every piece is chosen with care to help you express your unique aesthetic.</p>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2024 Aesthetic Style Hub. All rights reserved.</p>
+        <p>Disclosure: This site contains affiliate links. We may earn a commission from qualifying purchases.</p>
+        <p style="margin-top: 1rem;">
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Contact Us</a>
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
